@@ -13,14 +13,14 @@ namespace Lab2_Krysan.ViewModels
 {
     class MainViewModel : INotifyPropertyChanged
     {
-        private DateTime _date;
+        private string _date;
         private string _name;
         private string _surname;
         private string _email;
-        private bool _isAdult;
+        private string _isAdult;
         private string _chineaseAstrologicalSign;
         private string _astrologicalSign;
-        private bool _isBirthday;
+        private string _isBirthday;
 
 
         private RelayCommand _returnCommand;
@@ -31,11 +31,11 @@ namespace Lab2_Krysan.ViewModels
             SetData();
         }
 
-        public DateTime Date
+        public string Date
         {
             get { return _date; }
 
-            set
+            private set
             {
                 _date = value;
                 OnPropertyChanged();
@@ -46,7 +46,7 @@ namespace Lab2_Krysan.ViewModels
         {
             get { return _name; }
 
-            set
+            private set
             {
                 _name = value;
                 OnPropertyChanged();
@@ -57,7 +57,7 @@ namespace Lab2_Krysan.ViewModels
         {
             get { return _surname; }
 
-            set
+            private set
             {
                 _surname = value;
                 OnPropertyChanged();
@@ -68,7 +68,7 @@ namespace Lab2_Krysan.ViewModels
         {
             get { return _email; }
 
-            set
+            private set
             {
                 _email = value;
                 OnPropertyChanged();
@@ -79,7 +79,7 @@ namespace Lab2_Krysan.ViewModels
         {
             get { return _chineaseAstrologicalSign; }
 
-            set
+            private set
             {
                 _chineaseAstrologicalSign = value;
                 OnPropertyChanged();
@@ -90,9 +90,31 @@ namespace Lab2_Krysan.ViewModels
         {
             get { return _astrologicalSign; }
 
-            set
+            private set
             {
                 _astrologicalSign = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public string IsAdult
+        {
+            get { return _isAdult; }
+
+            private set
+            {
+                _isAdult = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public string IsBirthday
+        {
+            get { return _isBirthday; }
+
+            private set
+            {
+                _isBirthday = value;
                 OnPropertyChanged();
             }
         }
@@ -100,11 +122,27 @@ namespace Lab2_Krysan.ViewModels
         private async void SetData()
         {
             LoaderManager.Instance.ShowLoader();
-            Person person = null;
             await Task.Run(() =>
             {
+                Date = "Date of birth : " + StationManager.CurrentPerson.DateOfBirth.Date.ToString();
+                Name = "Name : " + StationManager.CurrentPerson.Name;
+                Surname = "Surname : " + StationManager.CurrentPerson.Surname;
+                Email = "E-mail : " + StationManager.CurrentPerson.Email;
+                IsAdult = "Is Adult : " + StationManager.CurrentPerson.IsAdult;
+                AstrologicalSign = "Sun sign : " + StationManager.CurrentPerson.SunSign;
+                ChineaseAstrologicalSign = "Chinese sign : " + StationManager.CurrentPerson.ChineseSign;
+                IsBirthday = "Is birthay : " + StationManager.CurrentPerson.IsBirthday;
             });
             LoaderManager.Instance.HideLoader();
+        }
+
+        public RelayCommand ReturnCommand
+        {
+            get
+            {
+                return _returnCommand ?? (_returnCommand = new RelayCommand(
+                           o => { NavigationManager.Instance.Navigate(ViewType.PersonInitialization);  }));
+            }
         }
 
 

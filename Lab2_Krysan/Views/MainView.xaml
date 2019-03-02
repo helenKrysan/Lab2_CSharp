@@ -18,14 +18,14 @@
 			<RowDefinition Height="Auto"></RowDefinition>
 			<RowDefinition Height="Auto"></RowDefinition>
 		</Grid.RowDefinitions>
-		<TextBlock Grid.Row="0" Margin="10,10,10,10" HorizontalAlignment="Left" VerticalAlignment="Center" Text="{Binding Date, Mode=TwoWay}"/>
-		<TextBlock Grid.Row="1" Margin="10,10,10,10" HorizontalAlignment="Left" VerticalAlignment="Center" Text="{Binding Name,Mode=TwoWay}"/>
-		<TextBlock Grid.Row="2" Margin="10,10,10,10" HorizontalAlignment="Left" VerticalAlignment="Center" Text="{Binding Surname, Mode=TwoWay}"/>
-		<TextBlock Grid.Row="3" Margin="10,10,10,10" HorizontalAlignment="Left" VerticalAlignment="Center" Text="{Binding Email, Mode=TwoWay}"/>
-		<TextBlock Grid.Row="4" Margin="10,10,10,10" HorizontalAlignment="Left" VerticalAlignment="Center" Text="{Binding IsAdult, Mode=TwoWay}"/>
-		<TextBlock Grid.Row="5" Margin="10,10,10,10" HorizontalAlignment="Left" VerticalAlignment="Center" Text="{Binding ChineaseAstrologicalSign, Mode=TwoWay}"/>
-		<TextBlock Grid.Row="6" Margin="10,10,10,10" HorizontalAlignment="Left" VerticalAlignment="Center" Text="{Binding AstrologicalSign, Mode=TwoWay}"/>
-		<TextBlock Grid.Row="7" Margin="10,10,10,10" HorizontalAlignment="Left" VerticalAlignment="Center" Text="{Binding IsBirthday, Mode=TwoWay}"/>
+		<TextBlock Grid.Row="0" Margin="10,10,10,10" HorizontalAlignment="Left" VerticalAlignment="Center" Text="{Binding Date, Mode=OneWay}"/>
+		<TextBlock Grid.Row="1" Margin="10,10,10,10" HorizontalAlignment="Left" VerticalAlignment="Center" Text="{Binding Name,Mode=OneWay}"/>
+		<TextBlock Grid.Row="2" Margin="10,10,10,10" HorizontalAlignment="Left" VerticalAlignment="Center" Text="{Binding Surname, Mode=OneWay}"/>
+		<TextBlock Grid.Row="3" Margin="10,10,10,10" HorizontalAlignment="Left" VerticalAlignment="Center" Text="{Binding Email, Mode=OneWay}"/>
+		<TextBlock Grid.Row="4" Margin="10,10,10,10" HorizontalAlignment="Left" VerticalAlignment="Center" Text="{Binding IsAdult, Mode=OneWay}"/>
+		<TextBlock Grid.Row="5" Margin="10,10,10,10" HorizontalAlignment="Left" VerticalAlignment="Center" Text="{Binding ChineaseAstrologicalSign, Mode=OneWay}"/>
+		<TextBlock Grid.Row="6" Margin="10,10,10,10" HorizontalAlignment="Left" VerticalAlignment="Center" Text="{Binding AstrologicalSign, Mode=OneWay}"/>
+		<TextBlock Grid.Row="7" Margin="10,10,10,10" HorizontalAlignment="Left" VerticalAlignment="Center" Text="{Binding IsBirthday, Mode=OneWay}"/>
 		<Button Grid.Row="8" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="10" Content="Return" Command="{Binding ReturnCommand}"/>
 	</Grid>
 </UserControl>

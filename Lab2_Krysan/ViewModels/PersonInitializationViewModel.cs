@@ -79,7 +79,7 @@ namespace Lab2_Krysan.ViewModels
 
         private bool CanExecuteCommand()
         {
-            return !string.IsNullOrWhiteSpace(_email) && !string.IsNullOrWhiteSpace(_name) && !string.IsNullOrWhiteSpace(_surname) && (_date != null);
+            return !string.IsNullOrWhiteSpace(_email) && !string.IsNullOrWhiteSpace(_name) && !string.IsNullOrWhiteSpace(_surname) && (_date != new DateTime());
         }
 
         private async void ProceedImpl(object o)
@@ -92,6 +92,7 @@ namespace Lab2_Krysan.ViewModels
                 try
                 {
                     person = new Person(_name, _surname, _email, _date);
+                    var checkAge = person.IsAdult;
                 }
                 catch (Exception e)
                 {
@@ -109,6 +110,7 @@ namespace Lab2_Krysan.ViewModels
                 {
                     MessageBox.Show("Happy BirthDay!!!");
                 }
+                StationManager.CurrentPerson = person;
                 LoaderManager.Instance.HideLoader();
                 NavigationManager.Instance.Navigate(ViewType.Main);
             }

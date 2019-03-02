@@ -41,9 +41,46 @@ namespace Lab2_Krysan.Models
             {
                 return _dateOfBirth;
             }
-            set
+            private set
             {
                 _dateOfBirth = value;
+            }
+        }
+
+        public string Name
+        {
+            get
+            {
+                return _name;
+            }
+            private set
+            {
+                _name = value;
+            }
+        }
+
+
+        public string Surname
+        {
+            get
+            {
+                return _surname;
+            }
+            private set
+            {
+                _surname = value;
+            }
+        }
+
+        public string Email
+        {
+            get
+            {
+                return _email;
+            }
+            private set
+            {
+                _email = value;
             }
         }
 
