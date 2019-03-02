@@ -27,10 +27,13 @@ namespace Lab2_Krysan.Tools.Navigation
         {
             if (!ViewsDictionary.ContainsKey(viewType))
                 InitializeView(viewType);
+            else
+                ReInitializeView(viewType);
             ContentOwner.ContentControl.Content = ViewsDictionary[viewType];
         }
 
         protected abstract void InitializeView(ViewType viewType);
+        protected abstract void ReInitializeView(ViewType viewType);
 
     }
 

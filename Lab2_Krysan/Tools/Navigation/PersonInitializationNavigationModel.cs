@@ -26,5 +26,20 @@ namespace Lab2_Krysan.Tools.Navigation
             }
         }
 
+        protected override void ReInitializeView(ViewType viewType)
+        {
+            switch (viewType)
+            {
+                case ViewType.PersonInitialization:               
+                    break;
+                case ViewType.Main:
+                    ViewsDictionary[viewType] = new MainView();
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(viewType), viewType, null);
+            }
+        }
+
+
     }
 }
