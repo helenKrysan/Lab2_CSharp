@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2005
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab2_Krysan", "Lab2_Krysan\Lab2_Krysan.csproj", "{DD808F00-79AB-4D1D-B67E-2B20A694E078}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DD808F00-79AB-4D1D-B67E-2B20A694E078}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD808F00-79AB-4D1D-B67E-2B20A694E078}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD808F00-79AB-4D1D-B67E-2B20A694E078}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD808F00-79AB-4D1D-B67E-2B20A694E078}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {366FE453-7D45-49F2-8B83-14ABFD842DAE}
+	EndGlobalSection
+EndGlobal
