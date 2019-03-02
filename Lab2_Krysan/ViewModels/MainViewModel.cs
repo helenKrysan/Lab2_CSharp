@@ -1,12 +1,9 @@
-﻿using Lab2_Krysan.Models;
-using Lab2_Krysan.Tools;
+﻿using Lab2_Krysan.Tools;
 using Lab2_Krysan.Tools.Managers;
 using Lab2_Krysan.Tools.Navigation;
-using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
-using System.Windows;
 
 
 namespace Lab2_Krysan.ViewModels
