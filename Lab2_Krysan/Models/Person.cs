@@ -153,7 +153,7 @@ namespace Lab2_Krysan.Models
                         {
                             sign = "Capricorn";
                         }
-                        sign = "Aquarius";
+                        else sign = "Aquarius";
                         break;
                     }
                 case 2:
@@ -162,7 +162,7 @@ namespace Lab2_Krysan.Models
                         {
                             sign = "Aquarius";
                         }
-                        sign = "Pisces";
+                        else sign = "Pisces";
                         break;
                     }
                 case 3:
@@ -171,7 +171,7 @@ namespace Lab2_Krysan.Models
                         {
                             sign = "Pisces";
                         }
-                        sign = "Aries";
+                        else sign = "Aries";
                         break;
                     }
                 case 4:
@@ -180,7 +180,7 @@ namespace Lab2_Krysan.Models
                         {
                             sign = "Aries";
                         }
-                        sign = "Taurus";
+                        else sign = "Taurus";
                         break;
                     }
                 case 5:
@@ -189,7 +189,7 @@ namespace Lab2_Krysan.Models
                         {
                             sign = "Taurus";
                         }
-                        sign = "Gemini";
+                        else sign = "Gemini";
                         break;
                     }
                 case 6:
@@ -198,7 +198,7 @@ namespace Lab2_Krysan.Models
                         {
                             sign = "Gemini";
                         }
-                        sign = "Cancer";
+                        else sign = "Cancer";
                         break;
                     }
                 case 7:
@@ -207,7 +207,7 @@ namespace Lab2_Krysan.Models
                         {
                             sign = "Cancer";
                         }
-                        sign = "Leo";
+                        else sign = "Leo";
                         break;
                     }
                 case 8:
@@ -216,7 +216,7 @@ namespace Lab2_Krysan.Models
                         {
                             sign = "Leo";
                         }
-                        sign = "Virgo";
+                        else sign = "Virgo";
                         break;
                     }
                 case 9:
@@ -225,7 +225,7 @@ namespace Lab2_Krysan.Models
                         {
                             sign = "Virgo";
                         }
-                        sign = "Libra";
+                        else sign = "Libra";
                         break;
                     }
                 case 10:
@@ -234,7 +234,7 @@ namespace Lab2_Krysan.Models
                         {
                             sign = "Libra";
                         }
-                        sign = "Scorpio";
+                        else sign = "Scorpio";
                         break;
                     }
                 case 11:
@@ -243,7 +243,7 @@ namespace Lab2_Krysan.Models
                         {
                             sign = "Scorpio";
                         }
-                        sign = "Sagittarius";
+                        else sign = "Sagittarius";
                         break;
                     }
                 case 12:
@@ -252,7 +252,7 @@ namespace Lab2_Krysan.Models
                         {
                             sign = "Sagittarius";
                         }
-                        sign = "Capricorn";
+                        else sign = "Capricorn";
                         break;
                     }
                 default:
