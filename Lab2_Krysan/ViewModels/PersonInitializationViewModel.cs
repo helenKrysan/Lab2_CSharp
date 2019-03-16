@@ -102,6 +102,17 @@ namespace Lab2_Krysan.ViewModels
                     MessageBox.Show($"Proceed failed for person {_name} {_surname}. Reason:{Environment.NewLine} Email {_email} is not valid");
                     return false;
                 }
+                catch(FutureInputDateException e)
+                {
+                    MessageBox.Show($"Proceed failed for person {_name} {_surname}. Reason:{Environment.NewLine} Birth date couldn't be in the future");
+                    return false;
+                }
+                catch (LivePersonRequireException e)
+                {
+                    MessageBox.Show($"Proceed failed for person {_name} {_surname}. Reason:{Environment.NewLine} Person must be alive");
+                    return false;
+                }
+
                 catch (Exception e)
                 {
                     MessageBox.Show($"Proceed failed for person {_name} {_surname}. Reason:{Environment.NewLine} {e.Message}");

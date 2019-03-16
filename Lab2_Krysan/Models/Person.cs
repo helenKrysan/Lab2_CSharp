@@ -15,11 +15,11 @@ namespace Lab2_Krysan.Models
         {
             if (DateTime.Now < dateOfBirth)
             {
-                throw new FutureInputDateException("Birth date couldn't be in the future");
+                throw new FutureInputDateException();
             }
             if (!new EmailAddressAttribute().IsValid(email))
             {
-                throw new InvalidEmailException("");
+                throw new InvalidEmailException();
             }
             _name = name;
             _surname = surname;       
@@ -143,7 +143,7 @@ namespace Lab2_Krysan.Models
                 age = now.Year - _dateOfBirth.Year;
             }
 
-            if (age > 135) throw new LivePersonRequireException("Person must be alive");
+            if (age > 135) throw new LivePersonRequireException();
 
             return age;
         }
