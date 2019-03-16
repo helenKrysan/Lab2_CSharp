@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using System.Windows;
+using System.ComponentModel.DataAnnotations;
 
 namespace Lab2_Krysan.ViewModels
 {
@@ -85,36 +86,34 @@ namespace Lab2_Krysan.ViewModels
         private async void ProceedImpl(object o)
         {
             LoaderManager.Instance.ShowLoader();
-            Person person = null;
-            bool isError = false;
-            await Task.Run(() =>
+            bool noError =  await Task.Run(() =>
             {
                 try
                 {
-                    person = new Person(_name, _surname, _email, _date);
-                    var checkAge = person.IsAdult;
+                    if(!new EmailAddressAttribute().IsValid(_email))
+                    {
+                        MessageBox.Show($"Proceed failed for person {_name} {_surname}. Reason:{Environment.NewLine} Email {_email} is not valid. ");
+                        return false;
+                    }
+                    Person person = new Person(_name, _surname, _email, _date);
+                    if (person.IsBirthday)
+                    {
+                        MessageBox.Show("Happy BirthDay!!!");
+                    }
+                    StationManager.CurrentPerson = person;
                 }
                 catch (Exception e)
                 {
-                    isError = true;
+                    MessageBox.Show($"Proceed failed for person {_name} {_surname}. Reason:{Environment.NewLine} {e.Message}");
+                    return false;
                 }
+                return true;
             }
             );
-            if (isError)
-            {
-                MessageBox.Show("Input date is invalid");
-            }
-            else
-            {
-                if (person != null && person.IsBirthday)
-                {
-                    MessageBox.Show("Happy BirthDay!!!");
-                }
-                StationManager.CurrentPerson = person;
-                LoaderManager.Instance.HideLoader();
+            LoaderManager.Instance.HideLoader();
+            if (noError){
                 NavigationManager.Instance.Navigate(ViewType.Main);
             }
-            LoaderManager.Instance.HideLoader();
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

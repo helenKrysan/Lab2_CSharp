@@ -1,4 +1,6 @@
 ﻿using System;
+using Lab2_Krysan.Tools.Exception;
+using System.ComponentModel.DataAnnotations;
 
 namespace Lab2_Krysan.Models
 {
@@ -11,10 +13,15 @@ namespace Lab2_Krysan.Models
 
         public Person(string name, string surname, string email, DateTime dateOfBirth)
         {
+            if (DateTime.Now < dateOfBirth)
+            {
+                throw new FutureInputDateException("Birth date couldn't be in the future");
+            }
             _name = name;
-            _surname = surname;
+            _surname = surname;       
             _email = email;
             _dateOfBirth = dateOfBirth;
+            var checkAge = CountAge();
         }
 
         public Person(string name, string surname, string email)
@@ -132,7 +139,7 @@ namespace Lab2_Krysan.Models
                 age = now.Year - _dateOfBirth.Year;
             }
 
-            if (age > 135) throw new InvalidOperationException();
+            if (age > 135) throw new LivePersonRequireException("Person must be alive");
 
             return age;
         }
