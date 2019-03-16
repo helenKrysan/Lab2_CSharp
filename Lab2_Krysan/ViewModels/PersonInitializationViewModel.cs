@@ -7,7 +7,7 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using System.Windows;
-using System.ComponentModel.DataAnnotations;
+using Lab2_Krysan.Tools.Exception;
 
 namespace Lab2_Krysan.ViewModels
 {
@@ -90,17 +90,17 @@ namespace Lab2_Krysan.ViewModels
             {
                 try
                 {
-                    if(!new EmailAddressAttribute().IsValid(_email))
-                    {
-                        MessageBox.Show($"Proceed failed for person {_name} {_surname}. Reason:{Environment.NewLine} Email {_email} is not valid. ");
-                        return false;
-                    }
                     Person person = new Person(_name, _surname, _email, _date);
                     if (person.IsBirthday)
                     {
                         MessageBox.Show("Happy BirthDay!!!");
                     }
                     StationManager.CurrentPerson = person;
+                }
+                catch (InvalidEmailException e)
+                {
+                    MessageBox.Show($"Proceed failed for person {_name} {_surname}. Reason:{Environment.NewLine} Email {_email} is not valid");
+                    return false;
                 }
                 catch (Exception e)
                 {

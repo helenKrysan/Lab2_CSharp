@@ -17,6 +17,10 @@ namespace Lab2_Krysan.Models
             {
                 throw new FutureInputDateException("Birth date couldn't be in the future");
             }
+            if (!new EmailAddressAttribute().IsValid(email))
+            {
+                throw new InvalidEmailException("");
+            }
             _name = name;
             _surname = surname;       
             _email = email;
